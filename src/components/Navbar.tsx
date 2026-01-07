@@ -1,7 +1,6 @@
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import { WiDayCloudy } from "react-icons/wi";
 
 const navItems = [
     { name: "Home", href: "#hero" },
@@ -50,9 +49,14 @@ const Navbar = () => {
 
                 {/* mobile nav */}
                  {/* mobile menu button */}
-                 <button onClick={() => setIsMenuOpen((prev) => !prev)}> {isMenuOpen ? <X size={24} /> : <Menu size={24} /> } </button>
+                 <button 
+                 className="md:hidden p-2 text-foreground z-50" 
+                 onClick={() => setIsMenuOpen((prev) => !prev)} 
+                 aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}> 
+                 {isMenuOpen ? <X size={24} /> : <Menu size={24} /> }  
+                 </button>
 
-                 
+
                 <div className={cn("fixed inset-0 bg-background backdrop-blur-md z-40 flex-col items-center justify-center", 
                     "transition-all duration-300 md:hidden", 
                     isMenuOpen? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
