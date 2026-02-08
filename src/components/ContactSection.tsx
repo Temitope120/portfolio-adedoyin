@@ -1,7 +1,18 @@
-import { Github, Instagram, Linkedin, Mail, MapPin, Phone, Twitter } from 'lucide-react'
-import React from 'react'
+import { Instagram, Linkedin, Mail, MapPin, Phone, Send, Twitter } from 'lucide-react'
+import { cn } from '@/lib/utils'
+import { useToast } from './ui/useToast';
+
 
 const ContactSection = () => {
+    const { showToast } = useToast();
+    
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        setTimeout(()=> {
+            showToast("Message sent successfully!");
+        }, 1500)
+    }
     return (
         <section className="py-24 px-4 relative-bg-secondary/30">
             <div className="container mx-auto max-w-5xl">
@@ -54,14 +65,45 @@ const ContactSection = () => {
                             <div className="pt-8">
                                 <h4 className='font-medium mb-4'> Connect With Me</h4>
                                 <div className="flex space-x-4 justify-center">
-                                    <a href="#"><Linkedin /></a>
-                                    <a href="#">
-                                        <Twitter/>
+                                    <a href="#" target='_blank'><Linkedin /></a>
+                                    <a href="#" target='_blank'>
+                                        <Twitter />
                                     </a>
-                                    <a href="#">
+                                    <a href="#" target='_blank'>
                                         <Instagram />
                                     </a>
                                 </div>
+                            </div>
+
+                            <div className="bg-card p-8 rounded-lg shadow-xs">
+                                <div className="text-2xl font-semibold mb-6">
+                                    Send a Message
+
+                                </div>
+
+                                <form onSubmit={handleSubmit} className="space-y-6">
+                                    <div>
+                                        <label htmlFor="name" className='block text-sm font-medium mb-2'>Your Name</label>
+                                        <input type="text" name="name" id="name"  className='w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary' placeholder='Jess Wraith...' />
+                                    </div>
+
+                                    <div>
+                                        <label htmlFor="email" className='block text-sm font-medium mb-2'> Your Email</label>
+                                        <input type="email" name="email" id="email"  className='w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary' placeholder='Jess wraith@mail.com...' />
+                                    </div>
+
+                                    <div>
+                                        <label htmlFor="message" className='block text-sm font-medium mb-2'>Your Message</label>
+                                        <textarea name="message" id="message"  className='w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary resize-none' placeholder="Hello I'd like to talk about..." />
+                                    </div>
+
+                                    <button
+                                        type='submit'
+                                        className={cn("cosmic-button w-full flex items-center  justify-center gap-2")}>
+                                        Send Message <Send size={16} />
+                                    </button>
+                                    
+                                </form>
                             </div>
 
                         </div>
