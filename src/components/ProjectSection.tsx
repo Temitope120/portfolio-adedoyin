@@ -5,7 +5,7 @@ const projects = [
   {
     id: 1,
     title: "SaaS Web page",
-    description: "beutiful landing page",
+    description: "Beautiful landing page",
     image: "/projects/project1.png",
     tags: ["React", "TailwindCSS", "Firebase"],
     demoUrl: "#",
@@ -13,8 +13,8 @@ const projects = [
   },
   {
     id: 2,
-    title: "SaaS Web page",
-    description: "beutiful landing page",
+    title: "HRMS Application",
+    description: "Human Resource Management System, implementing role-based authentication and authorization.",
     image: "/projects/project2.png",
     tags: ["React", "TailwindCSS", "Firebase"],
     demoUrl: "#",
@@ -22,8 +22,8 @@ const projects = [
   },
   {
     id: 3,
-    title: "SaaS Web page",
-    description: "beutiful landing page",
+    title: "Ecommerce App",
+    description: "Beautiful landing page",
     image: "/projects/project3.png",
     tags: ["React", "TailwindCSS", "Firebase"],
     demoUrl: "#",
@@ -31,8 +31,8 @@ const projects = [
   },
   {
     id: 4,
-    title: "SaaS Web page",
-    description: "beutiful landing page",
+    title: "Job Portal Application",
+    description: "Beautiful landing page",
     image: "/projects/project4.png",
     tags: ["React", "TailwindCSS", "Firebase"],
     demoUrl: "#",
